@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<title>
+ElephantSQL Console
+in-class
+</title>
+<link href="ElephantSQL%20Console%20in-class_files/site.css" rel="stylesheet" type="text/css">
+<link href="ElephantSQL%20Console%20in-class_files/site_002.css" rel="stylesheet" type="text/css">
+<link href="https://api.elephantsql.com/favicon.ico" rel="icon" type="image/x-icon">
+<link href="ElephantSQL%20Console%20in-class_files/css.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="ElephantSQL%20Console%20in-class_files/main.js"></script><script type="text/javascript" src="ElephantSQL%20Console%20in-class_files/vendor.js"></script><script type="text/javascript" async="" src="ElephantSQL%20Console%20in-class_files/a"></script><script type="text/javascript" async="" src="ElephantSQL%20Console%20in-class_files/ga.js"></script><script src="ElephantSQL%20Console%20in-class_files/jquery-3.js" type="text/javascript"></script>
+<script src="ElephantSQL%20Console%20in-class_files/bootstrap.js" type="text/javascript"></script>
+<script src="ElephantSQL%20Console%20in-class_files/bootstrap-notify.js" type="text/javascript"></script>
+<script src="ElephantSQL%20Console%20in-class_files/bootstrap-switch.js" type="text/javascript"></script>
+<script src="ElephantSQL%20Console%20in-class_files/eventsource.js" type="text/javascript"></script>
+<script src="ElephantSQL%20Console%20in-class_files/site.js" type="text/javascript"></script>
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', "UA-35155084-2"]);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<style data-emotion="fcy"></style><style id="beacon-stylesheet" type="text/css">#beacon-container{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.5}#beacon-container,#beacon-container *{-webkit-box-sizing:border-box;box-sizing:border-box}#beacon-container *{-webkit-tap-highlight-color:rgba(0,0,0,0)}#BeaconContainer-root.is-mobile{--BlueConfigGlobalFontSize:14px}@media (min-width:330px){#BeaconContainer-root.is-mobile{--BlueConfigGlobalFontSize:15px}}@media (min-width:410px){#BeaconContainer-root.is-mobile{--BlueConfigGlobalFontSize:16px}}#BeaconContainer-root.is-mobile input,#BeaconContainer-root.is-mobile select,#BeaconContainer-root.is-mobile textarea{font-size:16px!important}#beacon-container a{color:_color(link,base);text-decoration:none}#beacon-container a:hover{color:_color(link,hover)}#beacon-container a.disabled{color:_color(text,muted);cursor:not-allowed}#beacon-container a.disabled:hover{color:_color(text,muted);text-decoration:none}#beacon-container-body{margin:0;overflow:hidden}</style></head>
+<body class="" style="cursor: default;">
+<div class="flex-box-container">
+<nav class="navbar" id="header-navbar">
+<div class="container">
+<div class="navbar-header">
+<a class="navbar-brand" href="https://customer.elephantsql.com/instance">
+<img class="service-logo hidden-xs" src="ElephantSQL%20Console%20in-class_files/service-logo.png">
+ElephantSQL
+</a>
+<div class="dropdown instance-list">
+<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="instance-list" type="button">
+<span id="active-instance">in-class</span>
+<span class="caret"></span>
+</button>
+<ul aria-labelledby="instance-list" class="dropdown-menu">
+<li class="all-instances">
+<a href="https://customer.elephantsql.com/instance">List all instances</a>
+<a href="https://customer.elephantsql.com/instance/create">Create new instance</a>
+</li>
+<li class="divider" role="separator"></li>
+<li><a href="https://customer.elephantsql.com/instance/110919/sso?goto=browser">in-class</a></li></ul>
+</div>
+<button aria-expanded="false" class="navbar-toggle collapsed menu-toggle" data-target="#navbar" data-toggle="collapse" type="button">
+<img class="profile" src="ElephantSQL%20Console%20in-class_files/2d4cdcfd0593778f71863d27ed04c10a.jfif" title="">
+<i class="caret"></i>
+<span class="badge badge-grey"></span>
+</button>
+</div>
+<div class="collapse navbar-collapse" id="navbar">
+<ul class="nav navbar-nav visible-xs-block usermenu">
+
+<li class="dropdown-header">rokshanaparul10@gmail.com</li><li><a href="https://customer.elephantsql.com/user/settings"><span class="octicon octicon-person"></span>Account Settings</a></li><li><a href="https://customer.elephantsql.com/team"><span class="octicon octicon-organization"></span>Team Settings</a></li><li><a href="https://customer.elephantsql.com/billing"><span class="octicon octicon-credit-card"></span>Billing<span class="badge badge-grey"></span></a></li><li><a href="https://customer.elephantsql.com/apikeys"><span class="octicon octicon-circuit-board"></span>API Access</a></li><li><a href="https://customer.elephantsql.com/audit"><span class="octicon octicon-file"></span>Audit Log</a></li><li><a href="https://customer.elephantsql.com/agreement"><span class="octicon octicon-checklist"></span>Agreements</a></li><li class="divider"></li><li class="dropdown-header">Teams</li><li class="active"><a href="https://customer.elephantsql.com/user/switch-team/ddb6b536-0623-484c-8aa1-8e58c3f1e6e6"><span class="octicon octicon-undefined"></span>rokshanaparul10@gmail.com</a></li><li class="muted"><a href="https://customer.elephantsql.com/user/create-team"><span class="octicon octicon-undefined"></span>Create team</a></li><li class="divider"></li><li><a href="https://customer.elephantsql.com/logout"><span class="octicon octicon-sign-out"></span>Log out</a></li></ul>
+<ul class="nav navbar-nav navbar-right hidden-xs">
+<li class="dropdown">
+<a class="dropdown-toggle menu-toggle" data-toggle="dropdown">
+<img class="profile" src="ElephantSQL%20Console%20in-class_files/2d4cdcfd0593778f71863d27ed04c10a.jfif" title="">
+<span>
+<span id="user">rokshanaparul10@gmail.com</span>
+<i class="caret"></i>
+</span>
+<span class="badge badge-grey"></span>
+</a>
+<ul class="dropdown-menu usermenu">
+
+<li class="dropdown-header">rokshanaparul10@gmail.com</li><li><a href="https://customer.elephantsql.com/user/settings"><span class="octicon octicon-person"></span>Account Settings</a></li><li><a href="https://customer.elephantsql.com/team"><span class="octicon octicon-organization"></span>Team Settings</a></li><li><a href="https://customer.elephantsql.com/billing"><span class="octicon octicon-credit-card"></span>Billing<span class="badge badge-grey"></span></a></li><li><a href="https://customer.elephantsql.com/apikeys"><span class="octicon octicon-circuit-board"></span>API Access</a></li><li><a href="https://customer.elephantsql.com/audit"><span class="octicon octicon-file"></span>Audit Log</a></li><li><a href="https://customer.elephantsql.com/agreement"><span class="octicon octicon-checklist"></span>Agreements</a></li><li class="divider"></li><li class="dropdown-header">Teams</li><li class="active"><a href="https://customer.elephantsql.com/user/switch-team/ddb6b536-0623-484c-8aa1-8e58c3f1e6e6"><span class="octicon octicon-undefined"></span>rokshanaparul10@gmail.com</a></li><li class="muted"><a href="https://customer.elephantsql.com/user/create-team"><span class="octicon octicon-undefined"></span>Create team</a></li><li class="divider"></li><li><a href="https://customer.elephantsql.com/logout"><span class="octicon octicon-sign-out"></span>Log out</a></li></ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<script>
+  (function () {
+    var $ul = $('.instance-list:first ul:first');
+    var $button = $('#active-instance');
+    var $team = $('#user');
+    var $badges = $('#navbar .badge');
+    var $avatar = $('.profile');
+    var url = null;
+  
+    window.currentInstance = {
+      name: 'ruby',
+      accountName: 'tasfrmza'
+    }
+  
+    var CustomerHeader = function (options) {
+      this.options = options;
+      this.url = options.base_url + options.data_path;
+      this.refreshData();
+    };
+  
+    CustomerHeader.prototype.refreshData = function () {
+      url = this.options.base_url + '/instance/'
+      if (sessionStorage) {
+        this.options.reload_userdata && sessionStorage.clear();
+        var data = sessionStorage.getItem(url);
+        if(data) {
+          if (data.includes("<html>")) {
+            sessionStorage.clear();
+          } else {
+            $(() => { this.populateHeader(JSON.parse(data)) });
+            return;
+          }
+        }
+      }
+      $.get({ url: this.url, xhrFields: { withCredentials: true }, success: data => {
+        if (sessionStorage) {
+          sessionStorage.setItem(url, JSON.stringify(data));
+        }
+        this.populateHeader(data);
+      }});
+    };
+  
+    CustomerHeader.prototype.populateHeader = function (data) {
+      var path = location.pathname.replace(/\/console\/.*?\//, '');
+      $(function () {
+        $button.text(data.appname);
+        $ul.children(':not(.divider, .all-instances)').remove();
+        if (!data) return;
+        if (data.avatar) {
+          $avatar.attr('src', data.avatar)
+        }
+        if (data.subscriptions) {
+          data.subscriptions.forEach(function (s) {
+            $li = $('<li/>').appendTo($ul);
+            $a = $('<a href="'+url+s.id+'/sso?goto='+path+'"></a>').appendTo($li);
+            $a.text(s.appname);
+          });
+          $team.text(data.team);
+          $badges.text(data.unpaid_invoices);
+          $usermenus = $('ul.usermenu');
+          data.usermenu && $(data.usermenu).each(function(idx, item) {
+            var $li = $('<li/>').appendTo($usermenus);
+            var badge = item.badge;
+            if (item.class) {
+              $li.addClass(item.class);
+            }
+            if (item.route) {
+              $a = $('<a/>').appendTo($li);
+              $a.attr('href', item.route);
+              $a.append($('<span/>').addClass('octicon octicon-'+item.icon));
+              $a.append(document.createTextNode(item.name));
+              if (badge) {
+                $('<span/>').addClass('badge badge-'+badge.color).text(badge.content).appendTo($a);
+              }
+            } else {
+              $li.append(item.name);
+            }
+          });
+        }
+      });
+    }
+  
+    CustomerHeader.init = function (options) {
+      return new CustomerHeader(options);
+    };
+  
+    window.CustomerHeader = CustomerHeader;
+  })();
+  
+  ! CustomerHeader.init({base_url: "https://customer.elephantsql.com", data_path: "/header/api?id=110919", reload_userdata: false});
+</script>
+
+<div class="sidebar-wrapper">
+<nav class="sidebar">
+<ul class="list-unstyled components">
+<li class="">
+<a class="loader-link" href="https://api.elephantsql.com/console/03fa3541-862b-45c6-bb3e-ef31aad6b913/details?">Details</a>
+</li>
+<li class="hidden-xs">
+<a class="loader-link" href="https://api.elephantsql.com/console/03fa3541-862b-45c6-bb3e-ef31aad6b913/alarms?">Alarms</a>
+</li>
+<li class="active">
+<a class="loader-link" href="https://api.elephantsql.com/console/03fa3541-862b-45c6-bb3e-ef31aad6b913/browser?">Browser</a>
+</li>
+<li class="">
+<a class="loader-link" href="https://api.elephantsql.com/console/03fa3541-862b-45c6-bb3e-ef31aad6b913/stats?">Stats</a>
+</li>
+<li class="">
+<a class="loader-link" href="https://api.elephantsql.com/console/03fa3541-862b-45c6-bb3e-ef31aad6b913/queries?">Slow Queries</a>
+</li>
+<li class="">
+<a class="loader-link" href="https://api.elephantsql.com/console/03fa3541-862b-45c6-bb3e-ef31aad6b913/backup?">Backup</a>
+</li>
+<li class="hidden-xs">
+<a class="loader-link" href="https://api.elephantsql.com/console/03fa3541-862b-45c6-bb3e-ef31aad6b913/log?">Log</a>
+</li>
+<li class="hidden-xs">
+<a class="loader-link" href="https://api.elephantsql.com/console/03fa3541-862b-45c6-bb3e-ef31aad6b913/metrics?">Metrics</a>
+</li>
+<li class="hidden-xs">
+<a class="loader-link" href="https://api.elephantsql.com/console/03fa3541-862b-45c6-bb3e-ef31aad6b913/admin?">Admin</a>
+</li>
+<li class="hidden-xs">
+<a class="loader-link" href="https://api.elephantsql.com/console/03fa3541-862b-45c6-bb3e-ef31aad6b913/integrations?">Integrations</a>
+</li>
+</ul>
+</nav>
+
+<section class="main loader-wrapper">
+<div class="sidebar-main-wrapper">
+<button class="btn navbar-btn" id="sidebarCollapse" type="button">
+<i class="glyphicon glyphicon-menu-hamburger"></i>
+</button>
+<div id="notifications" class="affix-top">
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="col-sm-3 pull-right">
+<form class="form-inline" method="get">
+<select class="form-control" id="db_name" name="db_name" style="width: 100%;">
+<option selected="selected">tasfrmza</option>
+</select>
+<script>
+  $('#db_name').on('change', function () {
+    showLoader();
+    $(this).closest('form').submit();
+  })
+</script>
+</form>
+</div>
+
+<h2>SQL Browser</h2>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="cloud-box">
+<form class="form-horizontal" id="query-form" method="post">
+<input type="hidden" name="authenticity_token" value="0PJoI+byZ7Jv2T68osS3L2T0p9P6P6h4ntm6+H/bV6k=">
+<fieldset>
+<input name="db_name" type="hidden" value="tasfrmza">
+<div class="form-group">
+<div class="col-xs-12">
+<textarea class="form-control" id="query" name="query" placeholder="SQL Query" rows="2" style="width: 1439px; height: 186px;">CREATE TABLE test_table (
+  id    SERIAL PRIMARY KEY,
+  name  varchar(40) NOT NULL,
+  data  JSONB
+);
+</textarea>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12">
+<div class="dropdown-wrapper">
+<div class="dropdown">
+<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+Table queries
+<span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li class="disabled">
+<a>No tables</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="dropdown-wrapper" style="left: 155px;">
+<div class="dropdown">
+<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+Previous queries
+<span class="caret"></span>
+</button>
+<ul class="dropdown-menu scrollable-menu" id="previous-queries"><li><a class="table-link">CREATE TABLE test_table (<br>  id    SERIAL PRIMARY KEY,<br>  name  varchar(40) NOT NULL,<br>  data  JSONB<br>);<br></a></li></ul>
+</div>
+</div>
+<div class="pull-right">
+<button class="btn btn-primary" type="submit">
+Execute
+<i class="glyphicon glyphicon-play"></i>
+</button>
+</div>
+</div>
+</div>
+</fieldset>
+<div id="result">
+<div class="" id="no-rows" style="text-align: center">
+No rows returned
+</div>
+<div id="result-error"></div>
+<div class="table-responsive">
+<table class="table">
+<thead></thead>
+<tbody></tbody>
+</table>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<style>
+  #query, #previous-queries {
+    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+  }
+  
+  #result .table>tbody>tr>td,
+  #result .table>tbody>tr>th,
+  #result .table>tfoot>tr>td,
+  #result .table>tfoot>tr>th,
+  #result .table>thead>tr>td,
+  #result .table>thead>tr>th{
+    max-width: 400px;
+    word-wrap: break-word;
+  }
+  
+  #previous-queries {
+    max-width: 100%;
+  }
+  #previous-queries>li>a{
+    white-space: pre-wrap;
+  }
+  #previous-queries>li>a:hover {
+    cursor: pointer;
+  }
+  .scrollable-menu {
+    height: auto;
+    max-height: 300px;
+    overflow-x: hidden;
+  }
+  
+  .dropdown-wrapper {
+    position: absolute;
+    left: 15px;
+    right: 115px;
+  }
+</style>
+<script>
+  $('.table-link').on('click', function() {
+    $('#query').val("SELECT * FROM \"" +
+      $(this).data("schema") + "\".\"" +
+      $(this).data("table") + "\" " +
+      "LIMIT 100");
+  });
+  var $qform = $('#query-form');
+  var result = document.querySelector('#result');
+  var resultError = result.querySelector('#result-error');
+  var noRows = result.querySelector('#no-rows');
+  var thead = result.querySelector('thead');
+  var tbody = result.querySelector('tbody');
+  var queryBox = document.getElementById('query');
+  var previousQueries = document.getElementById('previous-queries');
+  
+  function insertQueryInQueryBox(query) {
+    queryBox.value = query;
+  }
+  
+  function addQueriesToPreviousQueries(queries) {
+    previousQueries.innerHTML = "";
+    queries.forEach((item) => {
+      let listItem = document.createElement("li");
+      previousQueries.append(listItem);
+  
+      let link = document.createElement("a");
+      link.classList.add("table-link");
+      link.innerText = item;
+      link.onclick = () => insertQueryInQueryBox(item);
+      listItem.appendChild(link);
+    })
+  }
+  function retrieveQueriesFromLocalStorage(){
+    let result = JSON.parse(localStorage.getItem("elephantsql-queries"));
+    if (result) {
+      return result;
+    }
+    else {
+      return [];
+    }
+  }
+  let queries = retrieveQueriesFromLocalStorage();
+  
+  function addQueryToLocalStorage(query){
+    console.log(query);
+    let queryIndex = queries.findIndex( (item) => {
+      return item === query;
+    });
+  
+    if(queryIndex >= 0)
+      queries.splice(queryIndex, 1);
+  
+    queries.unshift(query);
+    queries = queries.slice(0, 100);
+    console.log(queries);
+    localStorage.setItem("elephantsql-queries", JSON.stringify(queries));
+    addQueriesToPreviousQueries(queries);
+  }
+  
+  addQueriesToPreviousQueries(queries);
+  
+  $qform.on('submit', function(e) {
+    var last_response_len = false, error = false;
+    resultError.innerHTML = '';
+    noRows.classList.add('hide');
+    tbody.innerHTML = '';
+    thead.innerHTML = '';
+    e.preventDefault();
+    $("body").css("cursor", "progress");
+    $(".btn-primary", e.target).attr("disabled", "disabled")
+    $.ajax({
+        type: $qform.attr('method'),
+        url: $qform.attr('action'),
+        data: $qform.serialize(),
+        xhrFields: {
+          onprogress: function(e) {
+            var this_response, response = e.currentTarget.response, parts, headers;
+            if (last_response_len === false) {
+                headers = true;
+                this_response = response;
+                last_response_len = response.length;
+            } else {
+                this_response = response.substring(last_response_len);
+                last_response_len = response.length;
+            }
+            parts = this_response.split(/\n/);
+            parts.forEach(function (part) {
+              if (!part) {
+                return;
+              }
+              var data = JSON.parse(part);
+              var key = Object.keys(data)[0];
+              var tr = null;
+              if (key == 'row') {
+                if (headers) {
+                  tr = document.createElement('tr');
+                  Object.keys(data.row).forEach(function (col) {
+                    var th = document.createElement('th');
+                    th.innerText = col;
+                    tr.appendChild(th);
+                  })
+                  thead.appendChild(tr);
+                  headers = false;
+                }
+                tr = document.createElement('tr');
+                Object.values(data.row).forEach(function (val) {
+                  var td = document.createElement('td');
+                  td.innerText = val;
+                  tr.appendChild(td);
+                })
+                tbody.appendChild(tr);
+              } else if (key == 'error') {
+                let pre = document.createElement('pre');
+                pre.innerText = data.error.replace(/<br>/g,'\r\n');
+                resultError.appendChild(pre);
+                error = true;
+              }
+            });
+          }
+        },
+        success: function (data) {
+          if (error) {
+            flashNotify({type: 'error', message: 'Query failed'});
+          } else {
+            flashNotify({type: 'success', message: 'Query completed'});
+            addQueryToLocalStorage(queryBox.value);
+          }
+        },
+        error: function (data) {
+          flashNotify({type: 'error', message: 'Query failed'});
+        },
+        complete: function (data) {
+          $("body").css("cursor", "default");
+          $(".btn-primary", e.target).removeAttr("disabled")
+          if (!tbody.querySelectorAll('tr').length) {
+            noRows.classList.remove('hide');
+          }
+        }
+    });
+  })
+</script>
+
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-xs-6 col-sm-4 col-md-3 rl-xs">
+<h4>Menu</h4>
+<ul class="quicklinks">
+<li>
+<a href="https://www.elephantsql.com/">Home</a>
+</li>
+<li>
+<a href="https://www.elephantsql.com/plans.html">Plans</a>
+</li>
+<li>
+<a href="https://www.elephantsql.com/docs.html">Documentation</a>
+</li>
+<li>
+<a href="https://www.elephantsql.com/blog/index.html">Blog</a>
+</li>
+<li>
+<a href="https://www.elephantsql.com/about_us.html">About</a>
+</li>
+</ul>
+</div>
+<div class="col-xs-6 col-sm-4 col-md-3">
+<h4>More</h4>
+<ul class="quicklinks">
+<li>
+<a href="https://status.elephantsql.com/" target="_new">Status</a>
+</li>
+<li>
+<a href="https://www.elephantsql.com/terms_of_service.html">Terms of Service</a>
+</li>
+<li>
+<a href="https://www.elephantsql.com/program_policies.html">Program Policies</a>
+</li>
+<li>
+<a href="https://www.elephantsql.com/privacy_policy.html">Privacy Policy</a>
+</li>
+<li>
+<a href="https://www.elephantsql.com/imprint.html">Imprint</a>
+</li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-3 text-center support-call-out">
+<p class="logo">
+ElephantSQL
+</p>
+<a class="btn btn-xl btn-invert" href="https://www.elephantsql.com/support.html">Contact Support</a>
+<p class="opening-hours">Open 24 hours a day, 7 days a week</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 text-center">
+<hr style="margin: 10px;">
+<p style="margin: 0;">© Copyright 2012-2020 ElephantSQL. PostgreSQL and 
+the PostgreSQL Logo are trademarks of PostgreSQL Community Association 
+of Canada.</p>
+</div>
+</div>
+</div>
+</footer>
+
+</div>
+
+<div class="modal fade" id="confirm-modal" role="dialog" tabindex="-1">
+<div class="modal-dialog" role="document">
+<form class="form-horizontal modal-content">
+<div class="modal-header">
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">
+×
+</span>
+</button>
+<h4 class="modal-title" id="confirm-title">Confirm</h4>
+</div>
+<div class="modal-body">
+<p id="confirm-body">
+Are your sure?
+</p>
+<div class="form-group" id="pwd-confirm-form">
+<label class="col-sm-2 control-label">Password</label>
+<div class="col-sm-8">
+<input autocomplete="off" class="form-control" id="pwd-confirm" name="confirm_password" required="" type="password">
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn btn-default" data-dismiss="modal" type="button">Cancel</button>
+<button class="btn" id="confirm-button" type="submit">Confirm</button>
+</div>
+</form>
+</div>
+</div>
+
+<script>
+  if (false && true) {
+    $('input, textarea, :submit').prop('disabled', true);
+    $(window).on('beforeunload', function () {
+      $('.only-dedicated').remove();
+    })
+  }
+</script>
+<script>
+  $(document).ready(function () {
+    $('#sidebarCollapse').on('click', function () {
+      $('.sidebar').toggleClass('active');
+    });
+  });
+</script>
+<script>
+  feedback.bootstrap("https://elephantsql-stream.herokuapp.com/sse/feedback?token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2VtYWlsIjoicm9rc2hhbmFwYXJ1bDEwQGdtYWlsLmNvbSIsImZlZWRiYWNrX2lkIjoiMzI3YTVhNDJjZDk3ODM4YzRkZjIxMjRhYTg2OTY5NDdhMjUyYjQyMjc1Y2MzYzhiMmYzMzgyMWMwMGVjOTE2MSJ9.uuzR7-cgDt_Rral2aVdHDovhJ3S9N2Zvfgsz2M1a6lA");
+</script>
+<script>
+  !function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});
+  window.Beacon('init', 'c52670fb-3881-4f3a-ae0d-18cfd3ef4826')
+</script>
+<script>
+  window.Beacon('identify', {
+    email: "rokshanaparul10@gmail.com",
+    signature: "830a36b3d0b0905c63720fd67c82327ef400410b59149d3464e59f4b59dc0774"
+  })
+</script>
+
+
+<div id="beacon-container"><div data-reactroot="" class="Beacon"><div class="fcy-k7cd9d e1i7t89x0"></div><div class="BeaconContainer is-configDisplayRight fcy-lquhul e1swzdlb0" data-css-with-delay="false"></div><div class="BeaconFabButtonFrame fcy-e2mv6z e1b5xbr10" style="border-radius: 60px; height: 60px; position: fixed; transform: scale(1); width: 60px; z-index: 1049;"><iframe id="" title="Help Scout Beacon"></iframe></div><span></span><!-- react-empty: 7 --><span></span></div></div></body></html>
