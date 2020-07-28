@@ -24,4 +24,46 @@ cursor.execute('SELECT * from test_table;')
 
 # Note - nothing happened yet! We need to actually *fetch* from the cursor
 results = cursor.fetchall()
-print(results) 
+# print(results) 
+
+
+############# Connect to SQLite3 DB for RPG data #################
+
+import sqlite3
+
+sl_conn = sqlite3.connect("rpg_db.sqlite3")
+sl_cursor = sl_conn.cursor()
+characters = sl_cursor.execute('SELECT * FROM charactercreator_character LIMIT 10').fetchall()
+print(characters)
+
+################ Create Character Table in PostGRES #################
+
+create_character_table_query = '''
+CREATE TABLE IF NOT EXISTS rpg_characters (
+    character_id SERIAL PRIMARY KEY,
+	name VARCHAR(30),
+	level INT,
+	exp INT,
+	hp INT,
+	strength INT,
+	intelligence INT,
+	dexterity INT,
+	wisdom INT
+)
+
+'''
+cursor.execute(create_character_table_query)
+conn.commit()
+
+################ Insert Character Data in PostGRES #################
+
+for character in characters:
+
+    insert_query = ''' INSERT INTO rpg_characters
+        ( character_id, name, level, exp, hp, strength, intelligence, dexterit, wisdom) VALUES
+        {character} 
+    '''
+
+    cursor.execute(insert_query)
+
+conn.commit()
