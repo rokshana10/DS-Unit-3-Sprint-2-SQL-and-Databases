@@ -4,23 +4,21 @@ import psycopg2
 from psycopg2.extras import execute_values
 import pandas
 
-​
 load_dotenv() #> loads contents of the .env file into the script's environment
 
-​
-DB_NAME = os.getenv("DB_NAME")
-DB_USER = os.getenv("DB_USER")
-DB_PASS = os.getenv("DB_PASS")
-DB_HOST = os.getenv("DB_HOST")
+DB_NAME = os.getenv("tasfrmza")
+DB_USER = os.getenv("tasfrmza")
+DB_PASS = os.getenv("xsQ1fXkVRAz8DOYDtxOPOLg8Kst51VyX")
+DB_HOST = os.getenv("ruby.db.elephantsql.com")
 
-​
+
 CSV_FILEPATH = "titanic.csv"
 
-​
-# CONNECT TO THE PG DATABASE
+
+# CONNECT TO THE RPG DATABASE
 
 ​
-connection = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST)
+connection = psycopg2.connect(dbname=tasfrmza, user=tasfrmza, password=xsQ1fXkVRAz8DOYDtxOPOLg8Kst51VyX, host=ruby.db.elephantsql.com)
 cursor = connection.cursor()
 
 ​
