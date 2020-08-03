@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import os
 import psycopg2
 from dotenv import load_dotenv
@@ -67,3 +68,6 @@ for character in characters:
     cursor.execute(insert_query)
 
 conn.commit()
+
+
+
